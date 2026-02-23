@@ -40,7 +40,7 @@ class ProductoController extends Controller
         Producto::create($request->all());
 
         return redirect()->route('productos.index')
-                        ->with('success', '¡Producto creado exitosamente!');
+                        ->with('success', 'Producto creado');
     }
 
     /**
@@ -69,7 +69,7 @@ class ProductoController extends Controller
         $producto = Producto::findOrFail($id);
         $producto->update($request->all());
 
-        return redirect()->route('productos.index')->with('success', 'Producto actualizado correctamente');
+        return redirect()->route('productos.index')->with('success', 'Producto actualizado');
     }
 
     /**
@@ -79,6 +79,6 @@ class ProductoController extends Controller
     {
         $producto->delete();
 
-        return redirect()->route('productos.index')->with('success', 'Producto eliminado correctamente.');
+        return redirect()->route('productos.index')->with('success', 'Producto eliminado');
     }
 }
